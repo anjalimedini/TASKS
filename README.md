@@ -1,16 +1,12 @@
-## HISTOGRAM
+## NUMBERS
 
-1.INSTALL FOLLOWING PACKAGES
-
- ```Opencv,Matplotlib```
- 
-2.CODE
+1.CODE
  ```bash
-import cv2 
-from matplotlib import pyplot as plt 
-img = cv2.imread('/home/anjali-medini/Desktop/image/arj.jpeg',0)
-histr = cv2.calcHist([img],[0],None,[256],[0,256])
-plt.plot(histr)
-plt.show() 
-```
+num = list(range(10))
+previousnum = 0
+for i in num:
+    sum = previousnum + 1
+    print('Current number' + str(i)+ 'previous number'+ str(previousnum)+ 'is' + str(sum))
+    previousnum = i
 
+```
