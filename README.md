@@ -171,6 +171,152 @@ OUTPUT:
 
 ![histo](https://github.com/anjalimedini/TASKS/assets/169042588/cd78cbf7-8bd9-404f-8c0b-9ea383d9907f)
 
+
+## BOUNDING BOXES 
+
+A bounding box in essence, is a rectangle that surrounds an object, that specifies its position, class(eg: car, person) and confidence(how likely it is to be at that location). Bounding boxes are mainly used in the task of object detection, where the aim is identifying the position and type of multiple objects in the image. 
+
+Required Packages:
+
+`requirments.txt`
+
+`os,csv,PIL`
+
+`pip install Pillow`
+
+Explanation:
+
+1.Import Librabies:
+
+ `os`: Operating system module for file operations.
+ 
+ `csv`: Module for reading and writing CSV files.
+ 
+ `PIL.Image and PIL.ImageDraw`: Modules from the Python Imaging Library (PIL), used for image processing and drawing.
+
+`import os`
+
+`import csv`
+
+`from PIL import Image, ImageDraw`
+
+2.Defining Paths:
+
+`csv_file = "/home/anjali-medini/Downloads/7622202030987_bounding_box.csv"`
+
+`image_dir = "/home/anjali-medini/Downloads/7622202030987"`
+
+`output_dir = "/home/anjali-medini/Downloads/7622202030987_with_boxes"`
+
+`csv_file`: Path to the CSV file containing bounding box information.
+
+`image_dir`: Directory where the images are stored.
+
+`output_dir`: Directory where the output images with bounding boxes will be saved.
+
+3.Creating Output Directory:
+
+`os.makedirs(output_dir, exist_ok=True)`
+
+ This line ensures that the output directory exists. If it doesn't, it creates it.
+
+ 4.Functions:
+ `def draw_boxes(image, boxes):
+ 
+    draw = ImageDraw.Draw(image)
+    
+    for box in boxes:
+    
+        left = int(box['left'])
+        
+        top = int(box['top'])
+        
+        right = int(box['right'])
+        
+        bottom = int(box['bottom'])
+        
+        draw.rectangle([left, top, right, bottom], outline="blue")
+        
+    return image
+
+    `def crop_image(image, boxes):
+    
+    cropped_images = []
+    
+    for box in boxes:
+    
+        left = int(box['left'])
+        
+        top = int(box['top'])
+        
+        right = int(box['right'])
+        
+        bottom = int(box['bottom'])
+        
+        cropped_img = image.crop((left, top, right, bottom))
+        
+        cropped_images.append(cropped_img)
+        
+    return cropped_images`
+
+    `draw_boxes(image, boxes)`: Draws bounding boxes on an image. It takes an image and a list of dictionaries (each containing the coordinates of a bounding box) as input and returns the image with bounding boxes drawn on it.
+
+    `crop_image(image, boxes)`: Crops the image based on the provided bounding box coordinates. It returns a list of cropped images.
+
+5.Reading CSV File:
+
+`with open(csv_file, 'r') as file:` Opens the CSV file in read mode.
+
+`csv_reader = csv.DictReader(file)`: Creates a CSV reader object that returns each row as a dictionary.
+
+6.Processing Each Row in the CSV:
+
+     for row in csv_reader:
+        image_name = row['filename']
+        image_path = os.path.join(image_dir, image_name)
+        output_path = os.path.join(output_dir, image_name)
+        image = Image.open(image_path)
+        boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
+        cropped_images = crop_image(image, boxes)
+        for i, cropped_img in enumerate(cropped_images):
+            cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
+        full_image_with_boxes = draw_boxes(image, boxes)
+        full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
+
+It iterates over each row in the CSV file.
+
+    `image_name`: Extracts the filename of the image from the current row.
+    
+    `image_path`: Constructs the full path to the image file.
+    
+    `output_path`: Constructs the full path where the processed images will be saved.
+    
+    `image` = Image.open(image_path): Opens the image using PIL.
+    
+    `boxes`: Extracts the bounding box coordinates from the current row and stores them in a list of dictionaries.
+
+7.Processing Images:
+
+cropped_images: Calls the crop_image function to crop the image based on the bounding box coordinates.
+
+It iterates over the cropped images, saves each one with a prefix indicating its index, and adds it to the output directory.
+
+full_image_with_boxes: Calls the draw_boxes function to draw bounding boxes on the original image.
+
+Saves the image with bounding boxes added to the output directory.
+
+INPUT:
+
+
+
+
+
+    
+
+
+
+
+
  
 
 
