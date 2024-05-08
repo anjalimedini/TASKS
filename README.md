@@ -316,7 +316,9 @@ OUTPUT1:
 
 OUTPUT2:
 
+![full_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/anjalimedini/TASKS/assets/169042588/8dc3fe50-ccb5-4e96-bfac-e365f71094a5)
 
+This script essentially reads bounding box information from a CSV file, applies the bounding boxes to the images, and saves the modified images to a specified output directory.
 
 
 
