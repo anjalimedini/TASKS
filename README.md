@@ -11,13 +11,44 @@ OpenCV library is compatible with the Linux and windows both operating system. U
 
 APPROACH
 
-1.import opencv library
+1.import opencv library:
 
 ```import cv2```
 
-2.define a video capture object 
+2.define a video capture object:
 
 ```vid = cv2.VideoCapture(0) ```
+
+3.loops for capturing the displaying frames:
+
+```while(True):``` 
+      
+4.Capture the video frame by frame:
+
+```ret, frame = vid.read()```
+
+5.displaying the frame:
+
+```cv2.imshow('frame', frame)```
+
+6. checking for Quit result:
+
+  if cv2.waitKey(1) & 0xFF == ord('q'): 
+   
+   break
+
+7. After the loop release the cap object, Destroy all the windows: 
+   
+   ```vid.release()```
+
+  OUTPUT :
+  
+
+  
+
+
+ 
+    
 
 
 
