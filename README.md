@@ -165,6 +165,8 @@ A histogram is a bar graph-like representation of data that buckets a range of c
 
 INPUT:
 
+![arj](https://github.com/anjalimedini/TASKS/assets/169042588/b91d7561-3081-4865-bf64-ed37d65f871c)
+
  
 
 
