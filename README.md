@@ -42,7 +42,8 @@ APPROACH
    ```vid.release()```
 
   OUTPUT :
-  
+
+  [Uploading Screencast from 08-05-24 11:47:54 AM IST.webm…]()
 
   
 
