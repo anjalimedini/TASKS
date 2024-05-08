@@ -167,6 +167,10 @@ INPUT:
 
 ![arj](https://github.com/anjalimedini/TASKS/assets/169042588/b91d7561-3081-4865-bf64-ed37d65f871c)
 
+OUTPUT:
+
+![histo](https://github.com/anjalimedini/TASKS/assets/169042588/cd78cbf7-8bd9-404f-8c0b-9ea383d9907f)
+
  
 
 
