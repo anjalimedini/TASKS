@@ -308,6 +308,12 @@ Saves the image with bounding boxes added to the output directory.
 INPUT:
 
 
+![7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/anjalimedini/TASKS/assets/169042588/4aaa1a75-5903-4a1b-ba80-f0898648057b)
+
+OUTPUT1:
+
+
+
 
 
 
