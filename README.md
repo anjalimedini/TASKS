@@ -103,6 +103,70 @@ Current number9previous number8is9
 So, the code attempts to iterate through the list `num`, but it mistakenly calculates the sum of the previous number and 1 instead of the current number and the previous number.
 
 
+## HISTOGRAM
+
+A histogram is a bar graph-like representation of data that buckets a range of classes into columns along the horizontal x-axis. The vertical y-axis represents the number count or percentage of occurrences in the data for each column. Columns can be used to visualize patterns of data distributions.
+
+1.Required Libraries:
+
+`requirments.txt`
+
+`Install command - pip install opencv-python`
+
+`Install command - pip install matplotlib`
+
+`Install command - pip install numpy`
+
+2.Import Libraries:
+
+`import cv2`
+
+`from matplotlib import pyplot as plt`
+
+`import numpy as np`
+
+3. Read image:
+
+ `img = cv2.imread('/home/anjali-medini/Desktop/image/arj.jpeg', 0)`
+
+ `cv2.imread()`: This function reads an image from the specified file path.
+
+ `/home/anjali-medini/Desktop/image/arj.jpeg`: This is the file path of the image to be read.
+
+ `0`: This argument specifies that the image should be read in grayscale mode. If you omit this argument or use `1` or `-1`, it reads the image in color mode.
+
+4.Calculate Histogram:
+
+ `histr = cv2.calcHist([img], [0], None, [256], [0,256])`
+
+ `cv2.calcHist()`: This function calculates the histogram of an image.
+ 
+`[img]`: This is the input image for which the histogram needs to be calculated.
+
+`[0]`: This specifies the channel for which the histogram is calculated. Since the image is in grayscale, there is only one channel (0).
+
+`None`: This argument is a mask. If provided, the histogram will be calculated only for the pixels where the mask image is non-zero.
+
+`[256]`: This specifies the number of bins for the histogram.
+
+`[0, 256]`: This specifies the range of pixel values. The histogram will be calculated for pixel values in the range [0, 256).
+
+5.Plot Histogram:
+
+`plt.plot(histr)`
+
+`plt.show()`
+
+  `plt.plot(): This function is used to plot the histogram.`
+  
+ `histr: This is the histogram calculated using cv2.calcHist().`
+   
+`plt.show(): This function displays the plotted histogram.`
+
+INPUT:
+
+ 
+
 
 
   
