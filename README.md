@@ -7,6 +7,8 @@ Using OPENCV:
 
 OpenCV library is compatible with the Linux and windows both operating system. Users need to install the OpenCV library on their local computer using the below command before they go ahead.
 
+```requirments.txt```
+
 ```Install command - pip install opencv-python```
 
 APPROACH
@@ -43,7 +45,7 @@ APPROACH
 
   OUTPUT :
 
-  [Uploading Screencast from 08-05-24 11:47:54 AM IST.webm…]()
+  
 
   
 
