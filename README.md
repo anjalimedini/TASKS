@@ -80,6 +80,29 @@ This line updates `previousnum` to be equal to the current number `i`, so that i
 
 OUTPUT :
 
+Current number0previous number0is1
+
+Current number1previous number0is1
+
+Current number2previous number1is2
+
+Current number3previous number2is3
+
+Current number4previous number3is4
+
+Current number5previous number4is5
+
+Current number6previous number5is6
+
+Current number7previous number6is7
+
+Current number8previous number7is8
+
+Current number9previous number8is9
+
+So, the code attempts to iterate through the list `num`, but it mistakenly calculates the sum of the previous number and 1 instead of the current number and the previous number.
+
+
 
 
   
