@@ -312,6 +312,10 @@ INPUT:
 
 OUTPUT1:
 
+![0_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/anjalimedini/TASKS/assets/169042588/adccef02-9f1b-4a9d-96e2-6a0df4df4b26)
+
+OUTPUT2:
+
 
 
 
