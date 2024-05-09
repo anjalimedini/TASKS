@@ -9,6 +9,8 @@ OpenCV library is compatible with the Linux and windows both operating system. U
 
 ```requirments.txt```
 
+```Install command - pip install -r requirments.txt```
+
 ```Install command - pip install opencv-python```
 
 APPROACH
@@ -21,27 +23,60 @@ APPROACH
 
 ```vid = cv2.VideoCapture(0) ```
 
-3.loops for capturing the displaying frames:
+3.We need to check if camera 
+ is opened previously or not 
+ 
+`if (video.isOpened() == False):`  
+    `print("Error reading video file")`
+  
+4.We need to set resolutions.
+ so, convert them from float to integer.
 
-```while(True):``` 
-      
-4.Capture the video frame by frame:
+`frame_width = int(video.get(3))`
 
-```ret, frame = vid.read()```
-
-5.displaying the frame:
-
-```cv2.imshow('frame', frame)```
-
-6. checking for Quit result:
-
-  if cv2.waitKey(1) & 0xFF == ord('q'): 
+`frame_height = int(video.get(4))`
    
-   break
+size = `(frame_width, frame_height)` 
 
-7. After the loop release the cap object, Destroy all the windows: 
+5.Below VideoWriter object will create 
+
+ a frame of above defined The output  
+ is stored in 'filename.avi' file. 
+ 
+`result = cv2.VideoWriter('camera.avi',  
+                         cv2.VideoWriter_fourcc(*'MJPG'), 
+                         10, size)`
+
+6. `while(True): 
+    ret, frame = video.read()`
    
-   ```vid.release()```
+7. if ret == True:
+    
+   Write the frame into the 
+        file 'filename.avi'
+   
+        `result.write(frame) 
+        cv2.imshow('Frame', frame)`
+8.Press S on keyboard to stop the process 
+
+   `if cv2.waitKey(1) & 0xFF == ord('s'):` 
+            `break`
+
+9.Break the loop 
+
+     else: 
+        break
+        
+10.When everything done, release  
+the video capture and video  
+write objects
+
+     video.release() 
+     result.release() 
+
+11.Closes all the frames 
+
+     cv2.destroyAllWindows()     
 
   OUTPUT :
 
@@ -112,6 +147,8 @@ A histogram is a bar graph-like representation of data that buckets a range of c
 
 `requirments.txt`
 
+```Install command - pip install -r requirments.txt```
+
 `Install command - pip install opencv-python`
 
 `Install command - pip install matplotlib`
@@ -180,6 +217,8 @@ A bounding box in essence, is a rectangle that surrounds an object, that specifi
 Required Packages:
 
 `requirments.txt`
+
+```Install command - pip install -r requirments.txt```
 
 `os,csv,PIL`
 
