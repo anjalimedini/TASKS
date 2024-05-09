@@ -1,28 +1,37 @@
-
-
-# import the opencv library 
 import cv2 
   
-  
-# define a video capture object 
-vid = cv2.VideoCapture(0) 
-  
+video = cv2.VideoCapture(0) 
+    
+if (video.isOpened() == False):  
+    print("Error reading video file") 
+   
+frame_width = int(video.get(3)) 
+frame_height = int(video.get(4)) 
+   
+size = (frame_width, frame_height) 
+   
+result = cv2.VideoWriter('camera.avi',  
+                         cv2.VideoWriter_fourcc(*'MJPG'), 
+                         10, size) 
+    
 while(True): 
-      
-    # Capture the video frame 
-    # by frame 
-    ret, frame = vid.read() 
+    ret, frame = video.read() 
   
-    # Display the resulting frame 
-    cv2.imshow('frame', frame) 
-      
-    # the 'q' button is set as the 
-    # quitting button you may use any 
-    # desired button of your choice 
-    if cv2.waitKey(1) & 0xFF == ord('q'): 
+    if ret == True:  
+  
+        result.write(frame) 
+        cv2.imshow('Frame', frame) 
+  
+        if cv2.waitKey(1) & 0xFF == ord('s'): 
+            break
+  
+    else: 
         break
   
-# After the loop release the cap object 
-vid.release() 
-# Destroy all the windows 
+video.release() 
+result.release() 
+    
 cv2.destroyAllWindows() 
+   
+
+
