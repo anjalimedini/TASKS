@@ -5,10 +5,14 @@ import cv2
 # importing library for plotting 
 from matplotlib import pyplot as plt 
 import numpy as np
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--image_path", help = "Enter the path of the image")
+args = vars(parser.parse_args())
   
 # reads an input image 
-img = cv2.imread('/home/anjali-medini/Desktop/image/arj.jpeg',0) 
+img = cv2.imread(args['image_path']) 
 
   
 # find frequency of pixels in range 0-255 
